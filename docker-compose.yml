@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: 
+     context: ./leadforge_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb+srv://sudhakarbhaskar7_db_user:ZuqmdDxagEccjkTJ@cluster0.w3cltig.mongodb.net/leadforge
+    depends_on:
+      - mongo
+
+  frontend:
+    build: 
+      context: ./leadforge_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - leadforge_backend
+
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
