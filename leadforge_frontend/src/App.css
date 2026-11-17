@@ -1,0 +1,128 @@
+/* App Global Styles */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scroll behavior for smooth navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+.app-main {
+  min-height: 100vh;
+}
+
+/* MOBILE GLOBAL RESET & OPTIMIZATION */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Remove horizontal overflow */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Ensure all sections are mobile-friendly */
+  section {
+    padding: 50px 16px;
+    width: 100%;
+  }
+
+  /* Container resets */
+  .container,
+  [class*="container"] {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Typography defaults */
+  h1{
+    color: white;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: break-word;
+    line-height: 1.2;
+  }
+
+  p {
+    word-break: break-word;
+  }
+
+  /* Full-width elements */
+  .full-width,
+  .card,
+  [class*="card"] {
+    width: 100%;
+  }
+
+  /* Grid to single column */
+  [class*="grid"],
+  [class*="row"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Touch-friendly buttons */
+  button,
+  a[role="button"],
+  [class*="button"],
+  [class*="btn"] {
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  /* Form elements */
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+    padding: 12px 12px;
+    font-size: 16px;
+  }
+
+  /* Image responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 12px;
+  }
+
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  body {
+    font-size: 13px;
+  }
+}
