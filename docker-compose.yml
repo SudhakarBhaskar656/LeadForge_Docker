@@ -1,3 +1,4 @@
+name: leadforge
 services:
   backend:
     build:
