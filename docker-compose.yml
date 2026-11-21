@@ -3,9 +3,9 @@ services:
     build: 
      context: ./leadforge_backend
     ports:
-      - "5000:5000"
+      - "3000:3000"
     environment:
-      - MONGO_URI=mongodb+srv://sudhakarbhaskar7_db_user:ZuqmdDxagEccjkTJ@cluster0.w3cltig.mongodb.net/leadforge
+      - MONGO_URI=${MONGO_URI}
     depends_on:
       - mongo
 
@@ -19,8 +19,6 @@ services:
 
   mongo:
     image: mongo:7
-    ports:
-      - "27017:27017"
     volumes:
       - mongo-data:/data/db
 
