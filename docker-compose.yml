@@ -1,26 +1,18 @@
 services:
   backend:
-    build: 
-     context: ./leadforge_backend
+    build:
+      context: ./leadforge_backend
+      dockerfile: backend.Dockerfile
     ports:
       - "3000:3000"
     environment:
       - MONGO_URI=${MONGO_URI}
-    depends_on:
-      - mongo
 
   frontend:
-    build: 
+    build:
       context: ./leadforge_frontend
+      dockerfile: frontend.Dockerfile
     ports:
       - "5173:5173"
     depends_on:
-      - leadforge_backend
-
-  mongo:
-    image: mongo:7
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:
+      - backend
