@@ -1,6 +1,7 @@
 name: leadforge
 services:
   backend:
+    image: leadbackend:latest
     build:
       context: ./leadforge_backend
       dockerfile: backend.Dockerfile
@@ -10,6 +11,7 @@ services:
       - MONGO_URI=${MONGO_URI}
 
   frontend:
+    image: leadfrontend:latest
     build:
       context: ./leadforge_frontend
       dockerfile: frontend.Dockerfile
